@@ -40,7 +40,7 @@ export default class Answer extends React.Component {
           url: `/api/qa/answers/${answer_id}/helpful`,
           method: 'put',
         }).then(() => {
-          this.setState({ helped: true, answerHelpfulCounter: +1});
+          this.setState({ helped: true, answerHelpfulCounter: this.state.answerHelpfulCounter+1});
         });
       }
 
