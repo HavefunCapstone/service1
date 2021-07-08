@@ -67,7 +67,7 @@ app.get('/api/qa/questions/:question_id/answers', (req, res) => {
 
 //updating helpfulness for the questions
 app.put('/api/qa/questions/:question_id/helpful/', (req, res) => {
-  axios.put("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/" +req.params.question_id +"/helpful",
+  axios.put("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/" +req.params.question_id +"/helpful",{},
 {
   headers: {
     Authorization: process.env.TOKEN,
@@ -85,7 +85,7 @@ app.put('/api/qa/questions/:question_id/helpful/', (req, res) => {
 
 //updating helpfulness for the answers
 app.put('/api/qa/answers/:answer_id/helpful', (req, res) => {
-  axios.put("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/answers/" + req.params.answer_id +"/helpful",
+  axios.put("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/answers/" + req.params.answer_id +"/helpful",{},
 {
   headers: {
     Authorization: process.env.TOKEN,

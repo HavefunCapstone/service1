@@ -16,6 +16,7 @@ export default class QuestionAndAnswer extends React.Component {
       showQuestion: false,
       currentQuestionId:0,
       displayedQuestions: [],
+      help: null,
     }
     this.showQuestion = this.showQuestion.bind(this);
     this.showAnwswer = this.showAnwswer.bind(this);
@@ -43,9 +44,9 @@ export default class QuestionAndAnswer extends React.Component {
     //console.log(id);
     let apiUrl = "/api/qa/answers";
     axios
-      .put(`${apiUrl}/${id}/helpful`, {})
-      .then((response) =>{this.fetchData();})
-      .catch(err => {console.log(err);});
+      .put(`${apiUrl}/${id}/helpful`, {help: help+1})
+      .then((response) =>{this.fetchData()})
+      .catch(err => {console.log(err)});
   }
 
 
