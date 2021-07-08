@@ -20,6 +20,7 @@ export default class QuestionAndAnswer extends React.Component {
     }
     this.showQuestion = this.showQuestion.bind(this);
     this.showAnwswer = this.showAnwswer.bind(this);
+    this.fetchData = this.fetchData.bind(this);
   }
 
   componentDidMount(){
