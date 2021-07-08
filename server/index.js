@@ -74,8 +74,7 @@ app.put('/api/qa/questions/:question_id/helpful/', (req, res) => {
   },
 })
   .then((data) => {
-    console.log(data)
-    res.send(data);
+    res.send("updated");
   })
   .catch((error) => {
     console.log('error case:');
@@ -92,7 +91,7 @@ app.put('/api/qa/answers/:answer_id/helpful', (req, res) => {
   },
 })
   .then((data) => {
-    res.send(data.data);
+    res.send("updated");
   })
   .catch((error) => {
     console.log('error case:');
