@@ -35,13 +35,12 @@ export default class Answer extends React.Component {
           return (<p className="cursor-pointer px-2" onClick={this.reportAnswer}>Report</p>)
       }
 
-      increaseHelpful() {
-        const id = this.state.answer_id;
+      increaseHelpful(answer_id) {
         axios({
-          url: `/api/qa/answers/${id}/helpful`,
+          url: `/api/qa/answers/${answer_id}/helpful`,
           method: 'put',
         }).then(() => {
-          this.setState({ helped: true, answerHelpfulCounter: this.state.answerHelpfulCounter +1});
+          this.setState({ helped: true, answerHelpfulCounter: 1});
         });
       }
 
