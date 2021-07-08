@@ -11,7 +11,7 @@ export default class QuestionModal extends React.Component {
             body:"",
             name:"",
             email:"",
-            id:props.id,
+            // id:props.id,
             fetchData:props.fetchData,
         };
         this.addQuestion = this.addQuestion.bind(this);
@@ -26,7 +26,7 @@ export default class QuestionModal extends React.Component {
           body: this.state.body,
           name: this.state.name,
           email: this.state.email,
-          product_id: this.state.id,
+          product_id: this.props.product_id,
         };
         console.log(data);
         axios
