@@ -19,7 +19,7 @@ export default class Question extends React.Component {
   }
 
   fetchData(){
-    axios.get('/qa/questions/' + this.state.question_id + '/answers')
+    axios.get('/api/qa/questions/' + this.state.question_id + '/answers')
     .then((result) => {
       console.log(result.data.results , "front");
       this.setState({answers: result.data.results})
@@ -31,7 +31,7 @@ export default class Question extends React.Component {
 
   //helpfull question
   markQuestionHelpful(question_id) {
-    let apiUrl = "/qa/questions";
+    let apiUrl = "/api/qa/questions";
 
     //sends the id and new author/text to our api
     axios

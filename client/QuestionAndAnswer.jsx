@@ -27,7 +27,7 @@ export default class QuestionAndAnswer extends React.Component {
   }
 
   fetchData(){
-    axios.get('/qa/questions/' + this.state.product_id)
+    axios.get('/api/qa/questions/' + this.state.product_id)
     .then((result) => {
       console.log(result.data.results);
       this.setState({questions: result.data.results})
@@ -41,7 +41,7 @@ export default class QuestionAndAnswer extends React.Component {
   //helpfull answer
   putHelpfullAnswer(id) {
     //console.log(id);
-    let apiUrl = "/qa/answers";
+    let apiUrl = "/api/qa/answers";
     axios
       .put(`${apiUrl}/${id}/helpful`, {})
       .then((response) =>{this.fetchData();})

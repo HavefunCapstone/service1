@@ -20,7 +20,7 @@ export default class Answer extends React.Component {
     reportAnswer() {
         const id = this.state.answer_id;
         axios({
-          url: `/qa/answers/${id}/report`,
+          url: `/api/qa/answers/${id}/report`,
           method: 'put',
         }).then(() => {
           this.setState({ reported: true });
@@ -38,7 +38,7 @@ export default class Answer extends React.Component {
       increaseHelpful() {
         const id = this.state.answer_id;
         axios({
-          url: `/qa/answers/${id}/helpful`,
+          url: `/api/qa/answers/${id}/helpful`,
           method: 'put',
         }).then(() => {
           this.setState({ helped: true });
