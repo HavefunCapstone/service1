@@ -15,9 +15,9 @@ export default class QuestionModal extends React.Component {
         this.addQuestion = this.addQuestion.bind(this);
     }
     
-    componentDidMount(){
-      this.addQuestion();
-    }
+    // componentDidMount(){
+    //   this.addQuestion();
+    // }
 
     addQuestion() {
         const data = {
@@ -31,7 +31,7 @@ export default class QuestionModal extends React.Component {
           .post("/api/qa/questions", data)  
           .then((result) => {
               console.log(result.config.data, "gdgdghdjf");
-              this.props.fetchData();
+              this.props.fetchData(); 
             })
             .catch((err) => {
                 console.error(err);
