@@ -7,7 +7,7 @@ export default class Question extends React.Component {
     super(props);
     this.state= {
       answers: [],
-      question_id:47584,
+      question_id:47887,
       questionHelpfulCounter: 0,
       helped: false,
     }
