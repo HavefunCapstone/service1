@@ -3,8 +3,6 @@ const morgan = require('morgan');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 3001;
-const config = require('../config.js');
-const TOKEN = require('../config').TOKEN;
 const axios = require('axios');
 
 app.use(morgan('dev'));
@@ -16,7 +14,7 @@ app.use(express.urlencoded({ extended: true}));
 app.get('/products/:id', (req, res) => {
   axios({
     headers: {
-      Authorization: config.TOKEN,
+      Authorization: process.env.TOKEN,
     },
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products',
     params: {
@@ -39,7 +37,7 @@ app.get('/qa/questions/:id', (req, res) => {
   req.params.id,
 {
   headers: {
-    Authorization: config.TOKEN,
+    Authorization: process.env.TOKEN,
   },
 })
   .then((data) => {
@@ -57,7 +55,7 @@ app.post('/qa/questions', (req, res) => {
   axios.post('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions' , req.body
     ,{
       headers: {
-        Authorization: config.TOKEN,
+        Authorization: process.env.TOKEN,
       }
     }
   )
@@ -75,7 +73,7 @@ app.get('/qa/questions/:question_id/answers', (req, res) => {
   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/47584/answers`,
 {
   headers: {
-    Authorization: config.TOKEN,
+    Authorization: process.env.TOKEN,
   },
 })
   .then((data) => {
@@ -92,7 +90,7 @@ app.put('/qa/questions/:question_id/helpful/', (req, res) => {
   axios.put("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/" +req.params.question_id +"/helpful",
 {
   headers: {
-    Authorization: config.TOKEN,
+    Authorization: process.env.TOKEN,
   },
 })
   .then((data) => {
@@ -110,7 +108,7 @@ app.put('/qa/answers/:answer_id/helpful', (req, res) => {
   axios.put("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/answers/" + req.params.answer_id +"/helpful",
 {
   headers: {
-    Authorization: config.TOKEN,
+    Authorization: process.env.TOKEN,
   },
 })
   .then((data) => {
@@ -125,7 +123,7 @@ app.put('/qa/answers/:answer_id/helpful', (req, res) => {
 app.put('/qa/answers/:answer_id/report', (req, res) => {
   axios({
     headers: {
-      Authorization: config.TOKEN,
+      Authorization: process.env.TOKEN,
     },
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/qa/questions/${req.params.answer_id}/report`,
     method: 'put',
