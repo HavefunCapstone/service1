@@ -38,16 +38,6 @@ export default class QuestionAndAnswer extends React.Component {
     })
   }
 
-  
-  //helpfull answer
-  putHelpfullAnswer(id) {
-    //console.log(id);
-    let apiUrl = "/api/qa/answers";
-    axios
-      .put(`${apiUrl}/${id}/helpful`, {help: help+1})
-      .then((response) =>{this.fetchData()})
-      .catch(err => {console.log(err)});
-  }
 
 
   showQuestion (){
