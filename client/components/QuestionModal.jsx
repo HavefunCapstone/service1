@@ -32,7 +32,8 @@ export default class QuestionModal extends React.Component {
         axios
           .post("/api/qa/questions", data)  
           .then((result) => {
-              console.log(result.config.data, "gdgdghdjf")
+              console.log(result.config.data, "gdgdghdjf");
+              this.state.fetchData();
             })
             .catch((err) => {
                 console.error(err);
