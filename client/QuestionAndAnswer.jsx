@@ -16,7 +16,6 @@ export default class QuestionAndAnswer extends React.Component {
       showQuestion: false,
       currentQuestionId:0,
       displayedQuestions: [],
-      fetchData:this.fetchData,
     }
     this.showQuestion = this.showQuestion.bind(this);
     this.showAnwswer = this.showAnwswer.bind(this);
@@ -71,7 +70,7 @@ export default class QuestionAndAnswer extends React.Component {
       <div>
         <QuestionList 
         questions={this.state.questions}
-        fetchData={this.state.fetchData}
+        fetchData={this.fetchData}
         id={this.state.product_id}
          />
       </div>

@@ -11,8 +11,6 @@ export default class QuestionModal extends React.Component {
             body:"",
             name:"",
             email:"",
-            // id:props.id,
-            fetchData:props.fetchData,
         };
         this.addQuestion = this.addQuestion.bind(this);
     }
@@ -26,14 +24,14 @@ export default class QuestionModal extends React.Component {
           body: this.state.body,
           name: this.state.name,
           email: this.state.email,
-          product_id: this.props.product_id,
+          product_id: this.props.id,
         };
         console.log(data);
         axios
           .post("/api/qa/questions", data)  
           .then((result) => {
               console.log(result.config.data, "gdgdghdjf");
-              this.state.fetchData();
+              this.props.fetchData();
             })
             .catch((err) => {
                 console.error(err);
