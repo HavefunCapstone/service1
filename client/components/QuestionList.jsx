@@ -56,7 +56,7 @@ export default class QuestionList extends React.Component {
                 <div className="flex flex-col">
                 <Scrollbars autoHeight autoWidth autoHeightMin={300} autoHeightMax={500} autoShow>
                 { this.props.questions
-                .sort((a, b) =>(a.question_helpfulness > b.question_helpfulness) ? -1 : 1)
+                .sort((a, b) =>(a.question_date > b.question_date) ? -1 : 1)
                 .filter((ele, idx) => idx < this.state.showQuestion && (!this.state.beginSearsh || ele.question_body.includes(this.state.inputSearch)))
                 .map(question =>{
                     console.log(question)

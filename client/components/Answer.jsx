@@ -7,7 +7,7 @@ export default class Answer extends React.Component {
         super(props);
         this.state = {
             reported: false,
-            answer_id: 47887,
+            answer_id: 452946,
             helped: false,
             answerHelpfulCounter: 0,
         }

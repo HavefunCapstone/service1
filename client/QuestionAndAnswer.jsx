@@ -10,7 +10,7 @@ export default class QuestionAndAnswer extends React.Component {
     
     this.state = {
       questions: [],
-      product_id: 11050,
+      product_id: 11010,
       maxQuestions: false,
       showAnswer:false,
       showQuestion: false,

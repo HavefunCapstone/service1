@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --config webpack.config.js",
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "start:dev": "nodemon ./server/index.js"
   },
   "author": "RBK Tunisia",
   "license": "ISC",

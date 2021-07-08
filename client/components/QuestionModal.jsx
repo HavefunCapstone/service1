@@ -17,6 +17,10 @@ export default class QuestionModal extends React.Component {
         this.addQuestion = this.addQuestion.bind(this);
     }
     
+    componentDidMount(){
+      this.addQuestion();
+    }
+
     addQuestion() {
         const data = {
           body: this.state.body,
