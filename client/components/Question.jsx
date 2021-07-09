@@ -37,7 +37,7 @@ export default class Question extends React.Component {
     axios
       .put(`${apiUrl}/${question_id}/helpful`)
       .then(() =>{ 
-        this.setState({questionHelpfulCounter: this.state.questionHelpfulCounter+1, helped: true});
+        this.setState({questionHelpfulCounter: this.state.questionHelpfulCounter + 1, helped: true});
       })
       .catch(err => {
         console.log(err);
@@ -59,7 +59,7 @@ export default class Question extends React.Component {
           <p className="">
             Helpful
           <a className="cursor-pointer m-2" onClick={()=> this.markQuestionHelpful()}>
-            Yes ({this.props.question.question_helpfulness + 1})
+            Yes ({this.props.question.question_helpfulness + this.state.questionHelpfulCounter})
           </a>
           </p>
         </div><br/>
