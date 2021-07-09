@@ -37,7 +37,7 @@ export default class Question extends React.Component {
     axios
       .put(`${apiUrl}/${question_id}/helpful`)
       .then(() =>{ 
-        this.setState({questionHelpfulCounter: this.state.questionHelpfulCounter + 1, helped: true});
+        this.setState({questionHelpfulCounter: 1, helped: true});
       })
       .catch(err => {
         console.log(err);
