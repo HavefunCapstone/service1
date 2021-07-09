@@ -59,7 +59,7 @@ export default class Question extends React.Component {
           <p className="">
             Helpful
           <a className="cursor-pointer m-2" onClick={()=> this.markQuestionHelpful()}>
-            Yes ({this.props.question.question_helpfulness + this.state.questionHelpfulCounter})
+            Yes ({this.props.question.question_helpfulness + 1})
           </a>
           </p>
         </div><br/>

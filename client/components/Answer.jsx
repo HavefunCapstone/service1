@@ -17,6 +17,7 @@ export default class Answer extends React.Component {
         this.renderHelpful = this.renderHelpful.bind(this);
     }
 
+    //reporting answer
     reportAnswer() {
         const id = this.state.answer_id;
         axios({
@@ -27,6 +28,7 @@ export default class Answer extends React.Component {
         });
       }
 
+      //if reported is true render Reported else render report
       renderReport() {
         // on click update report 
           if(this.state.reported){
@@ -35,6 +37,7 @@ export default class Answer extends React.Component {
           return (<p className="cursor-pointer px-2" onClick={this.reportAnswer}>Report</p>)
       }
 
+      //increase helpfulness 
       increaseHelpful(answer_id) {
         axios({
           url: `/api/qa/answers/${answer_id}/helpful`,
@@ -44,6 +47,7 @@ export default class Answer extends React.Component {
         });
       }
 
+      //render feedback
       renderHelpful() {
         if (this.state.helped) {
           return (
@@ -71,7 +75,7 @@ export default class Answer extends React.Component {
                 <p className="">
                     by {this.props.answer.answerer_name} at {moment(this.props.answer.date).format("MMM Do, YY")}
                 </p>
-            {/* on click update helpful */}
+            {/* on click update helpful and report*/}
                 <div className="flex text-sm text-gray-700">
                      {this.renderHelpful()} | {this.renderReport()}
                 </div>
